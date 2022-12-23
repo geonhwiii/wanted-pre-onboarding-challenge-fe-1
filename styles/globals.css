@@ -6,9 +6,18 @@
   html,
   body {
     @apply m-0 p-0;
+    @apply h-full;
+    font-size: 14px;
+  }
+  #__next {
+    @apply h-full;
   }
   a {
     @apply no-underline;
+    outline: none;
+  }
+  input {
+    @apply outline-none;
   }
   * {
     @apply box-border;
