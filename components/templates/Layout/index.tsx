@@ -13,7 +13,7 @@ export default function Layout({ Component, pageProps }: Props) {
       <Navbar />
       <main>
         <Component {...pageProps} />
-        <ToastContainer autoClose={3000} position="top-center" hideProgressBar limit={1} theme="dark" />
+        <ToastContainer autoClose={1000} position="top-center" hideProgressBar limit={1} theme="dark" />
       </main>
     </div>
   );

@@ -16,7 +16,9 @@ const fetcher = (value: JoinProps): Promise<JoinResponse> => joinFetcher.post('/
 export const useJoinMutation = (): UseMutationResult<JoinResponse, AxiosError, JoinProps> => {
   const router = useRouter();
   return useMutation(fetcher, {
-    onSuccess: () => router.push(Routes.LOGIN),
+    onSuccess: ({ data }) => {
+      router.push(Routes.LOGIN).then(() => toast.success(data.message));
+    },
     onError: (error) => {
       const err = error.response?.data as any;
       toast.error(err.detail as string);
