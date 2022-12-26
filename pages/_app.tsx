@@ -1,5 +1,6 @@
 import LayoutComponent from '@/components/templates/Layout';
 import '../styles/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 import type { AppProps } from 'next/app';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
