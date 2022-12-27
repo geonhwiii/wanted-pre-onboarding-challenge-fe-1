@@ -6,7 +6,7 @@ import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query
 import { useState } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [client] = useState(() => new QueryClient());
+  const [client] = useState(() => new QueryClient({ defaultOptions: { queries: { staleTime: 5 * 1000, retry: false } } }));
   return (
     <QueryClientProvider client={client}>
       <Hydrate state={pageProps.dehydratedState}>
