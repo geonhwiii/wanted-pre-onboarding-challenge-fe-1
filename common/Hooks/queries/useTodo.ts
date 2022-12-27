@@ -12,7 +12,6 @@ const fetcher = (): Promise<TodoResponse> => todoFetcher.get('/todos');
 export const useTodo = (): UseQueryResult<TodoResponse, AxiosError> => {
   const router = useRouter();
   return useQuery([queryKeys.TODO], fetcher, {
-    onSuccess: (data) => console.log(data),
     onError: (error) => {
       router.push(Routes.LOGIN);
       const err = error.response?.data as any;

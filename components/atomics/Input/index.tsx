@@ -6,11 +6,11 @@ type Props = Readonly<{
   type?: 'text' | 'email' | 'password';
   placeholder?: string;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }>;
 
 const Input = forwardRef<HTMLInputElement, Props>(
-  ({ type = 'text', placeholder = '값을 입력해주세요', defaultValue, className, onChange }, ref) => {
+  ({ type = 'text', placeholder = '값을 입력해주세요', defaultValue, className, onChange = () => {} }, ref) => {
     const change = (event: ChangeEvent<HTMLInputElement>) => {
       const value = event.target.value;
       onChange(value);
