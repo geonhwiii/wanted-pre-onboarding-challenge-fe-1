@@ -4,7 +4,10 @@ import { Routes } from '@/constants/routes';
 import Link from 'next/link';
 
 export default function Navbar() {
-  const { isLoggedIn, logout } = useAuth();
+  const { isLoggedIn, logout, isLoading } = useAuth();
+  if (isLoading) {
+    return null;
+  }
   return (
     <header className="sticky top-0 left-0 right-0 flex items-center bg-white shadow-sm h-14">
       <div className="flex items-center justify-between w-full px-4">

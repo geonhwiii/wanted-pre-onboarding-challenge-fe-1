@@ -14,7 +14,7 @@ export const useAuth = () => {
     setIsLoggedIn(false);
     localStorage.removeItem(Storage.AUTH_TOKEN);
   };
-  useQuery([queryKeys.TODO], fetcher, {
+  const { isLoading } = useQuery([queryKeys.TODO], fetcher, {
     onSuccess: () => setIsLoggedIn(true),
     onError: () => {
       logout();
@@ -23,5 +23,5 @@ export const useAuth = () => {
     retry: false,
   });
 
-  return { isLoggedIn, logout };
+  return { isLoggedIn, isLoading, logout };
 };
