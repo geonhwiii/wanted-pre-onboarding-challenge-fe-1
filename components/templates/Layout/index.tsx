@@ -9,7 +9,7 @@ type Props = {
 
 export default function Layout({ Component, pageProps }: Props) {
   return (
-    <div className="h-full max-w-5xl m-auto shadow-xl">
+    <div className="h-full max-w-5xl mx-auto overflow-auto shadow-xl">
       <Navbar />
       <main>
         <Component {...pageProps} />
