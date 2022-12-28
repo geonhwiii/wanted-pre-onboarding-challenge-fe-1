@@ -1,11 +1,13 @@
 import { configs } from '@/configs/index';
 import { Storage } from '@/constants/storage';
-import axios from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 
-export const fetcher = axios.create({
+const axiosConfig: AxiosRequestConfig = {
   baseURL: configs.baseUrl,
   withCredentials: true,
-});
+};
+
+export const fetcher = axios.create(axiosConfig);
 
 fetcher.interceptors.request.use((config) => {
   if (!config.headers) return config;

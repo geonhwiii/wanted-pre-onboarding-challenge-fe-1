@@ -10,7 +10,7 @@ export const TodoList = ({ items }: Props) => {
     <div>
       <ul className="flex flex-col-reverse">
         {items.map((item) => (
-          <TodoCard key={item.id} className="mb-2" item={item} />
+          <TodoCard key={item.id} className="mb-4" item={item} />
         ))}
       </ul>
     </div>
