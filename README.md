@@ -9,7 +9,7 @@
 - `tailwindcss`
 - `typescript`
 
----
+<br />
 
 ## 🗂️ Directory Info
 
@@ -28,13 +28,13 @@
 - `utils` : axios fetcher
 - `public`
 
----
+<br />
 
 ## 👉🏻 Pages
 
 ### 1. Login
 
-> <img width="333" alt="스크린샷 2023-01-10 오후 10 28 15" src="https://user-images.githubusercontent.com/44767362/211566127-be377d3d-3b42-439e-8142-82f1dd161ae5.png">
+<img width="333" alt="스크린샷 2023-01-10 오후 10 28 15" src="https://user-images.githubusercontent.com/44767362/211566127-be377d3d-3b42-439e-8142-82f1dd161ae5.png">
 
 <br />
 
