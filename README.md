@@ -1,6 +1,6 @@
 # wanted-pre-onboarding-challenge-fe-1
 
-## 📚 스택
+## 📚 Stack
 
 - `nextjs`
 - `axios`
@@ -11,7 +11,7 @@
 
 ---
 
-## 🗂️ 구조
+## 🗂️ Directory Info
 
 - `pages` : next route pages
 - `components`
