@@ -7,9 +7,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/React-v18.2.0-61DAFB?style=flat&logo=React&logoColor=white&style=for-the-badge"/> 
   <img src="https://img.shields.io/badge/Typescript-v4.9.4-3178C6?style=flat&logo=typescript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Next.JS-v18.4.0-000000?style=flat&logo=Next.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Next.JS-v13.1.0-000000?style=flat&logo=Next.js&logoColor=white"/>
   <img src="https://img.shields.io/badge/Tailwind-v3.2.4-06B6D4?style=flat&logo=TailwindCSS&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React%20Query-v3.2.4-FF4154?style=flat&logo=React Query&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React%20Query-v4.20.4-FF4154?style=flat&logo=React Query&logoColor=white"/>
   <img src="https://img.shields.io/badge/Tailwind-v3.2.4-06B6D4?style=flat&logo=TailwindCSS&logoColor=white"/>
   <img src="https://img.shields.io/badge/Axios-v1.2.1-5A29E4?style=flat&logo=Axios&logoColor=white"/>
 </p>
