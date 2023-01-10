@@ -2,7 +2,7 @@ import { useUpdateTodoMutation } from '@/common/Hooks/mutations/useUpdateTodoMut
 import Button from '@/components/atomics/Button';
 import Input from '@/components/atomics/Input';
 import { Todo } from '@/types/types';
-import { FormEvent, useRef } from 'react';
+import { FormEvent, useEffect, useRef } from 'react';
 
 type Props = {
   readonly todo: Todo;
@@ -25,19 +25,22 @@ export default function EditCard({ todo, onCancel }: Props) {
     updateTodo({ id, title: updateTitle, content: updateContent });
     onCancel();
   };
+  useEffect(() => {
+    titleRef.current!.focus();
+  }, []);
   return (
     <form className="flex flex-col" onSubmit={onUpdate}>
       <div className="mb-4">
-        <Input ref={titleRef} defaultValue={title} className="w-full text-2xl font-bold" />
+        <Input ref={titleRef} defaultValue={title} className="w-full font-bold text-md" />
       </div>
-      <div className="overflow-auto whitespace-pre-wrap max-h-40">
-        <Input ref={contentRef} defaultValue={content} className="w-full text-gray-600" />
+      <div className="overflow-auto whitespace-pre-wrap mr-36 max-h-40">
+        <Input ref={contentRef} defaultValue={content} className="w-full text-gray-300 text-md" />
       </div>
       <div className="absolute bottom-2 right-2">
-        <Button type="submit" className="px-4 py-2 mr-2 text-sm bg-blue-400">
+        <Button type="submit" className="px-4 py-2 mr-2 text-sm bg-blue-700">
           저장
         </Button>
-        <Button className="px-4 py-2 text-sm bg-red-400" onClick={onCancel}>
+        <Button className="px-4 py-2 text-sm bg-red-900" onClick={onCancel}>
           취소
         </Button>
       </div>

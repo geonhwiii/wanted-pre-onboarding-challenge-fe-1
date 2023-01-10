@@ -14,7 +14,7 @@ export default function Button({ type = 'button', isDisable, children, className
       type={type}
       disabled={isDisable}
       className={cx(
-        'bg-blue-600 text-white text-lg font-bold rounded-xl pw-2 py-4 disabled:bg-slate-200 disabled:text-gray-50 disabled:cursor-not-allowed transition-colors',
+        'bg-blue-600 text-white text-lg font-bold rounded-xl pw-2 py-4 disabled:bg-slate-900 disabled:text-gray-700 disabled:cursor-not-allowed transition-colors',
         className,
       )}
       onClick={onClick}

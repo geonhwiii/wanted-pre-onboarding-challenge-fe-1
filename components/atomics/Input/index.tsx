@@ -20,7 +20,10 @@ const Input = forwardRef<HTMLInputElement, Props>(
       <input
         type={type}
         ref={ref}
-        className={cx('border-b-2 border-gray-200 py-2 focus:border-blue-600 transition-colors', className)}
+        className={cx(
+          'border-b bg-transparent caret-slate-400 border-gray-900 pb-2 focus:border-blue-600 text-white transition-colors',
+          className,
+        )}
         placeholder={placeholder}
         defaultValue={defaultValue}
         minLength={minLength}

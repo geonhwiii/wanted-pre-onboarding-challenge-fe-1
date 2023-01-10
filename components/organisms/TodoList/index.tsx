@@ -8,7 +8,7 @@ type Props = {
 export const TodoList = ({ items }: Props) => {
   return (
     <div>
-      <ul className="flex flex-col-reverse">
+      <ul className="flex flex-col">
         {items.map((item) => (
           <TodoCard key={item.id} className="mb-4" item={item} />
         ))}

@@ -5,7 +5,7 @@ export default function Join() {
   return (
     <div className="mx-auto mt-24 w-96">
       <div className="mb-6 text-center">
-        <Typography className="text-3xl font-extrabold">회원가입</Typography>
+        <Typography className="text-3xl font-extrabold text-gray-200">회원가입</Typography>
       </div>
       <JoinForm />
     </div>

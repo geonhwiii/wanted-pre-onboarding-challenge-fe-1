@@ -11,7 +11,7 @@ type Props = PropsWithChildren & {
 
 export default function LinkButton({ children, to, className, onClick }: Props) {
   return (
-    <div className={cx('flex bg-blue-600 justify-center items-center w-20 h-10 rounded-2xl', className)}>
+    <div className={cx('flex bg-gray-800 justify-center items-center w-20 h-10 rounded-2xl', className)}>
       <NextLink className={'text-white font-bold'} href={to} onClick={onClick}>
         {children}
       </NextLink>

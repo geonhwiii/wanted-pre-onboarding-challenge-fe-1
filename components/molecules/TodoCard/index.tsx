@@ -17,22 +17,25 @@ export default function TodoCard({ className, item }: Props) {
   const { mutate: deleteTodo } = useDeleteTodoMutation();
   const { id, title, content } = item;
   const onToggleEdit = () => setEditMode((prev) => !prev);
-  const onDelete = () => deleteTodo({ id });
+  const onDelete = () => {
+    if (!window.confirm('정말로 지우시겠습니까...?')) return;
+    deleteTodo({ id });
+  };
   return (
-    <li className={cx('relative  p-8 pb-14 border-2 border-gray-100 rounded-md shadow-md', className)}>
+    <li className={cx('relative py-4 border-b border-b-gray-900', className)}>
       {!editMode ? (
         <div className="flex flex-col">
           <div className="mb-4">
-            <Typography className="text-2xl font-bold">{title}</Typography>
+            <Typography className="font-bold text-gray-300 text-md">{title}</Typography>
           </div>
-          <div className="overflow-auto whitespace-pre-wrap max-h-40">
-            <Typography className="text-gray-600">{content}</Typography>
+          <div className="mr-36">
+            <Typography className="text-gray-400 whitespace-normal text-md">{content}</Typography>
           </div>
           <div className="absolute bottom-2 right-2">
-            <Button className="px-4 py-2 mr-2 text-sm bg-gray-400" onClick={onToggleEdit}>
+            <Button className="px-4 py-2 mr-2 text-sm bg-gray-800" onClick={onToggleEdit}>
               수정
             </Button>
-            <Button className="px-4 py-2 text-sm bg-red-400" onClick={onDelete}>
+            <Button className="px-4 py-2 text-sm bg-red-900" onClick={onDelete}>
               삭제
             </Button>
           </div>

@@ -8,11 +8,9 @@ export default function Home() {
     return null;
   }
   return (
-    <div className="flex flex-col p-10">
-      <div className="mb-10">
-        <TodoInput />
-      </div>
+    <div className="flex flex-col p-4">
       <TodoList items={data.data.data} />
+      <TodoInput />
     </div>
   );
 }

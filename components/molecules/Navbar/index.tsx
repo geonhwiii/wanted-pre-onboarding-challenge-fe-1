@@ -9,9 +9,9 @@ export default function Navbar() {
     return null;
   }
   return (
-    <header className="sticky top-0 left-0 right-0 flex items-center bg-white shadow-sm h-14">
+    <header className="sticky top-0 left-0 right-0 z-50 flex items-center bg-black shadow-sm h-14">
       <div className="flex items-center justify-between w-full px-4">
-        <Link className="text-2xl font-extrabold" href={Routes.HOME}>
+        <Link className="text-2xl font-extrabold text-blue-600" href={Routes.HOME}>
           Wanted FE
         </Link>
         {!isLoggedIn ? (
