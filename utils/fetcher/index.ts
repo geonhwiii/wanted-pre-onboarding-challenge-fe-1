@@ -9,12 +9,13 @@ const axiosConfig: AxiosRequestConfig = {
 
 export const fetcher = axios.create(axiosConfig);
 
-fetcher.interceptors.request.use((config) => {
-  if (!config.headers) return config;
-  let token: string | null = null;
-  token = localStorage.getItem(Storage.AUTH_TOKEN);
-  if (token !== null) {
-    config.headers.Authorization = `Bearer ${token}`;
+fetcher.interceptors.request.use(setBearerTokenConfig);
+
+function setBearerTokenConfig(config: AxiosRequestConfig) {
+  if (!config.headers) {
+    return config;
   }
+  const token = localStorage.getItem(Storage.AUTH_TOKEN);
+  config.headers.Authorization = token ? `Bearer ${token}` : null;
   return config;
-});
+}

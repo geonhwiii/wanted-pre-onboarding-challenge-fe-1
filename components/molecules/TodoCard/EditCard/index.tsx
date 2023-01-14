@@ -1,4 +1,4 @@
-import { useUpdateTodoMutation } from '@/common/Hooks/mutations/useUpdateTodoMutation';
+import { useUpdateTodoMutation } from '@/common/Hooks/mutations/todo/useUpdateTodoMutation';
 import Button from '@/components/atomics/Button';
 import Input from '@/components/atomics/Input';
 import { Todo } from '@/types/types';

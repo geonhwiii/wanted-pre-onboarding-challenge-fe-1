@@ -2,10 +2,10 @@ import cx from 'classnames';
 import { Todo } from '@/types/types';
 import Typography from '@/components/atomics/Typography';
 import Button from '@/components/atomics/Button';
-import { useDeleteTodoMutation } from '@/common/Hooks/mutations/useDeleteTodoMutation';
 import { useCallback, useState } from 'react';
 import Input from '@/components/atomics/Input';
 import EditCard from './EditCard';
+import { useDeleteTodoMutation } from '@/common/Hooks/mutations/todo/useDeleteTodoMutation';
 
 type Props = {
   readonly className?: string;
