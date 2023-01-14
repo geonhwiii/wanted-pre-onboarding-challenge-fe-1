@@ -1,4 +1,4 @@
-import { useTodo } from '@/common/Hooks/queries/useTodo';
+import { useTodo } from '@/common/Hooks/queries/todo/useTodo';
 import { TodoInput } from '@/components/molecules/TodoInput';
 import { TodoList } from '@/components/organisms/TodoList';
 

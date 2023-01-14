@@ -13,15 +13,17 @@ type JoinProps = Readonly<{
 
 const fetcher = (value: JoinProps): Promise<JoinResponse> => joinFetcher.post('/users/create', value);
 
-export const useJoinMutation = (): UseMutationResult<JoinResponse, AxiosError, JoinProps> => {
+export const useJoinMutation = () => {
   const router = useRouter();
   return useMutation(fetcher, {
     onSuccess: ({ data }) => {
       router.push(Routes.LOGIN).then(() => toast.success(data.message));
     },
     onError: (error) => {
-      const err = error.response?.data as any;
-      toast.error(err.detail as string);
+      if (error instanceof AxiosError) {
+        const err = error.response?.data;
+        toast.error(err.detail);
+      }
     },
   });
 };

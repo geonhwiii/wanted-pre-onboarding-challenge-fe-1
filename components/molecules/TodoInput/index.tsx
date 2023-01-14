@@ -1,4 +1,4 @@
-import { useCreateTodoMutation } from '@/common/Hooks/mutations/useCreateTodoMutation';
+import { useCreateTodoMutation } from '@/common/Hooks/mutations/todo/useCreateTodoMutation';
 import Button from '@/components/atomics/Button';
 import Input from '@/components/atomics/Input';
 import { FormEvent, useRef } from 'react';

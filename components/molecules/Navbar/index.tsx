@@ -1,4 +1,4 @@
-import { useAuth } from '@/common/Hooks/queries/useAuth';
+import { useAuth } from '@/common/Hooks/queries/auth/useAuth';
 import LinkButton from '@/components/atomics/LinkButton';
 import { Routes } from '@/constants/routes';
 import Link from 'next/link';

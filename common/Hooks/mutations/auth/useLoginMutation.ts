@@ -14,7 +14,7 @@ type LoginProps = Readonly<{
 
 const fetcher = (value: LoginProps): Promise<LoginResponse> => loginFetcher.post('/users/login', value);
 
-export const useLoginMutation = (): UseMutationResult<LoginResponse, AxiosError<any>, LoginProps> => {
+export const useLoginMutation = () => {
   const routes = useRouter();
   return useMutation(fetcher, {
     onSuccess: ({ data }) => {
@@ -22,8 +22,10 @@ export const useLoginMutation = (): UseMutationResult<LoginResponse, AxiosError<
       routes.push(Routes.HOME).then(() => toast.success(data.message));
     },
     onError: (error) => {
-      const msg = error.response?.data?.details;
-      toast.error(msg);
+      if (error instanceof AxiosError) {
+        const err = error.response?.data;
+        toast.error(err.detail);
+      }
     },
   });
 };

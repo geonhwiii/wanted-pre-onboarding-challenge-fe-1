@@ -13,15 +13,17 @@ type UpdateTodoProps = Readonly<{
 
 const fetcher = ({ id, title, content }: UpdateTodoProps): Promise<TodoResponse> => joinFetcher.put(`/todos/${id}`, { title, content });
 
-export const useUpdateTodoMutation = (): UseMutationResult<TodoResponse, AxiosError, UpdateTodoProps> => {
+export const useUpdateTodoMutation = () => {
   const queryClient = useQueryClient();
   return useMutation(fetcher, {
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.TODO]);
     },
     onError: (error) => {
-      const err = error.response?.data as any;
-      toast.error(err.detail as string);
+      if (error instanceof AxiosError) {
+        const err = error.response?.data;
+        toast.error(err.detail);
+      }
     },
   });
 };

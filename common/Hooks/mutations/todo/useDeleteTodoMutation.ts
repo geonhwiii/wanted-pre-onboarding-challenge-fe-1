@@ -11,15 +11,17 @@ type DeleteTodoProps = Readonly<{
 
 const fetcher = (value: DeleteTodoProps): Promise<TodoResponse> => joinFetcher.delete(`/todos/${value.id}`);
 
-export const useDeleteTodoMutation = (): UseMutationResult<any, AxiosError, DeleteTodoProps> => {
+export const useDeleteTodoMutation = () => {
   const queryClient = useQueryClient();
   return useMutation(fetcher, {
     onSuccess: () => {
       queryClient.invalidateQueries([queryKeys.TODO]);
     },
     onError: (error) => {
-      const err = error.response?.data as any;
-      toast.error(err.detail as string);
+      if (error instanceof AxiosError) {
+        const err = error.response?.data;
+        toast.error(err.detail);
+      }
     },
   });
 };

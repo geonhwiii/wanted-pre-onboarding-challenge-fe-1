@@ -1,4 +1,4 @@
-import { useLoginMutation } from '@/common/Hooks/mutations/useLoginMutation';
+import { useLoginMutation } from '@/common/Hooks/mutations/auth/useLoginMutation';
 import Button from '@/components/atomics/Button';
 import Input from '@/components/atomics/Input';
 import { FormEvent, useMemo, useState } from 'react';
